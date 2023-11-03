@@ -1,0 +1,35 @@
+Problem Statement :
+You are given a number 'N' and a queery 'Q'. If 'Q' is 1, then you have to return the sum of all integers from 1 to 'N', 
+else if 'Q' is equal to 2 then you have to return the product of all integers from 1 to 'N'. Since thr product can be very large, return it modulo 10^9 + 7
+
+Sample Input :
+2
+4 1 
+4 2
+Explanation of the Sample Input :
+In the first test case, the answer is 10 because all integers between 1 and 4 are 1, 2, 3, and 4. Hence 1 + 2 + 3 + 4 is equal to 10.
+
+Problem Statement Link :
+https://www.codingninjas.com/studio/problems/sum-or-product_920478?leftPanelTabValue=PROBLEM
+
+Solution:
+#include <bits/stdc++.h> 
+long long int sumOrProduct(long long int n, long long int q)
+{
+	int sum = 0; 
+    long long int product = 1;
+    if(q == 1)
+    {
+        for(int i = 1; i <= n;i++)
+            sum += i;
+        return sum;
+    }
+    else if (q == 2)
+    {
+        for(int i = 1; i <= n;i++)
+            product = (product * i) % (1000000000 + 7);
+        return product;
+
+    }
+        
+}
