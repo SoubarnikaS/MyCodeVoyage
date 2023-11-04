@@ -1,0 +1,55 @@
+Problem Statement :
+You are given an array N integers.
+Find the maximum sum of two distinct integers in the array.
+
+Input :             Output :
+4                   
+3                
+4 1 6                10
+7
+3 7 2 1 1 5 3        12
+5
+8 2 9 4 9            17
+2
+1 2                  3
+
+
+Problem Statement Link :
+https://www.codechef.com/practice/course/arrays-cpp/PCPPAR01/problems/LARGESECOND?
+
+Solution :
+#include <iostream>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+    int T;
+    cin>>T;
+    while(T != 0)
+    {
+        int size,max_1 = 0,max_2 = 0,index = 0;
+        cin>>size;
+        int arr[size];
+        
+        for(int i = 0; i < size; i++)
+        {
+            cin>>arr[i];
+            if(arr[i] > max_1)
+                max_1 = arr[i];
+            
+        }
+        
+        for(int i = 0; i < size; i++)
+            if(arr[i] > max_2 && arr[i] != max_1)
+                max_2 = arr[i];
+      
+        cout<<max_1 + max_2<<endl;
+        
+        
+        
+        T--;
+        
+    }
+	return 0;
+}
