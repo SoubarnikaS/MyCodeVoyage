@@ -1,0 +1,43 @@
+Problem Statement :
+A left rotation operation on an array of size  shifts each of the array's elements  unit to the left.
+Given an integer d, rotate the array that many steps left and return the result.
+Input :
+d = 2;
+arr[] = [1,2,3,4,5]
+After 2 rotations, arr[] = [3,4,5,1,2]
+
+Problem Statement Link :
+https://www.hackerrank.com/challenges/array-left-rotation/problem?isFullScreen=true
+
+Solution :
+#include<iostream>
+using namespace std;
+void rotateArr(int arr[], int d, int n)
+{
+    while(d--)
+    {
+        int start = arr[0];
+        for(int i = 1; i <= n - 1; i++)
+            arr[i - 1] = arr[i];
+        arr[n - 1] = start;
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;;
+    int d;
+    cin>>d;
+    int arr[n];
+    
+    for(int i = 0; i < n; i++)
+        cin>>arr[i];
+    
+    rotateArr(arr, d, n);
+    
+    for(int i = 0; i < n; i++)
+        cout<<arr[i]<<" ";  
+    return 0;
+}
+
+}
