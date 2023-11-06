@@ -1,0 +1,50 @@
+Problem Statement :
+Alice and Bob each created one problem for HackerRank. A reviewer rates the two challenges, awarding points on a scale from 1 to 100 for three categories: problem clarity, originality, and difficulty.
+The rating for Alice's challenge is the triplet a = (a[0], a[1], a[2]), and the rating for Bob's challenge is the triplet b = (b[0], b[1], b[2]).
+The task is to find their comparison points by comparing a[0] with b[0], a[1] with b[1], and a[2] with b[2].
+If a[i] > b[i], then Alice is awarded 1 point.
+If a[i] < b[i], then Bob is awarded 1 point.
+If a[i] = b[i], then neither person receives a point.
+
+Sample Input :
+5 6 7
+3 6 10
+Sample Output :
+1 1 
+
+Problem Statement Link :
+https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true
+
+Solution :
+#include<iostream>
+using namespace std;
+
+void compareTriplets(int alice[], int bob[], int n)
+{
+    int alicePoints = 0, bobPoints = 0;
+    for(int i = 0; i < n; i++)
+    {
+        if(alice[i] > bob[i])
+            alicePoints++;
+        else if(bob[i] > alice[i])
+            bobPoints++;
+    }
+    
+    cout<<alicePoints<<" "<<bobPoints;
+}
+
+int main()
+{
+    int n = 3;
+    int alice[n];
+    int bob[n];
+    
+    for(int i = 0; i < n; i++)
+        cin>>alice[i];
+        
+    for(int i = 0; i < n; i++)
+        cin>>bob[i];
+    
+    compareTriplets(alice,bob,n);
+    
+}
