@@ -1,0 +1,37 @@
+Problem Statement :
+You are given two arrays of size n and m. Both these arrays are sorted in non-decreasing order. You have to find the intersection of these two arrays.
+The intersection of two arrays is an array consists of all the common elements occuring in both the arrays.
+
+Sample Input :
+6 4
+1 2 2 2 3 4
+2 2 3 3
+Sample Output :
+2 2 3
+3  
+
+Problem Statement Link :
+https://www.codingninjas.com/studio/problems/intersection-of-2-arrays_1082149?topic=arrays&source=home&leftPanelTab=0&leftPanelTabValue=PROBLEM
+
+Solution :
+#include <bits/stdc++.h> 
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m) {
+    int i = 0, j = 0;
+    vector<int> commonElements;
+
+    while (i < n && j < m) 
+	  {
+        if (arr1[i] == arr2[j]) 
+		    {
+            commonElements.push_back(arr1[i]);
+            i++;
+            j++;
+        } 
+    		else if (arr1[i] > arr2[j]) 
+            j++;	
+    		else 
+            i++;
+    }
+
+    return commonElements;
+}
