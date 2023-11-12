@@ -1,0 +1,21 @@
+Problem Statement :
+Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. 
+Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+Problem Statement Link :
+https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true
+
+Solution :
+void miniMaxSum(vector<int> arr) 
+{
+    long long sum = 0;
+    long long minSum = INT_MAX;
+    long long maxSum = INT_MIN;
+
+    sort(arr.begin(),arr.end());
+    
+    minSum = accumulate(arr.begin(),arr.begin() + 4,0LL);
+    maxSum = accumulate(arr.end() - 4,arr.end(),0LL);
+    
+    cout<<minSum<<" "<<maxSum;    
+}
