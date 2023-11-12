@@ -1,0 +1,29 @@
+Problem Statement:
+Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+
+Problem Statement Link :
+https://www.hackerrank.com/challenges/time-conversion/problem?isFullScreen=true
+
+Solution :
+string timeConversion(string s) 
+{
+    if(s[8] == 'A')
+    {
+        if(s.substr(0,2) == "12")
+            s.replace(0,2,"00");
+        return s.substr(0,8);
+    }
+
+    else
+    {
+        if(s.substr(0,2) != "12")
+        {
+            int hour = stoi(s.substr(0,2)) + 12;
+            s.replace(0,2,to_string(hour));
+        }
+        return s.substr(0,8);
+    }
+        
+}
