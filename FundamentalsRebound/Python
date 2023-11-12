@@ -1,0 +1,9 @@
+Problem Statement :
+Print the square of each number on new line
+
+Solution :
+inta = input()
+a = int(inta)
+for i in range(a):
+    print(i*i)
+    i = i + 1
