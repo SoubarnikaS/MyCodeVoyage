@@ -1,0 +1,23 @@
+Problem Statement :
+If n = 6, print
+     #
+    ##
+   ###
+  ####
+ #####
+######
+
+Problem Statement Link :
+https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true
+
+Solution :
+void staircase(int n)
+{
+    for(int i = 0; i < n; i++,cout<<endl)
+    {
+        for(int j = n - 1; j > i; j--)
+            cout<<" ";
+        for(int j = 0; j <= i; j++)
+            cout<<"#"; 
+    }
+}
