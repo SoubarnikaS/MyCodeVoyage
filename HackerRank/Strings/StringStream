@@ -1,0 +1,26 @@
+Problem Statement :
+There is one line of n integers separated by commas.The input is 23,4,5.
+Output must be
+23
+4
+5
+
+Problem Statement Link :
+https://www.hackerrank.com/challenges/c-tutorial-stringstream/problem?isFullScreen=true
+
+Solution :
+vector<int> stringStream(string str)
+{
+    vector<int> result;
+    stringstream ss (str);
+    char ch;
+    int a;
+    
+    while(ss >> a)
+    {
+        ss >> ch;
+        result.push_back(a);
+    }
+    
+    return result;
+}
