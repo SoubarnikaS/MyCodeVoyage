@@ -1,0 +1,30 @@
+Problem Statement :
+Given a string S of lowercase alphabets, check if it is isogram or not. An Isogram is a string in which no letter occurs more than once.
+Input:
+S = machine
+Output: 1
+Explanation: machine is an isogram
+as no letter has appeared twice. Hence
+we print 1.
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/check-if-a-string-is-isogram-or-not-1587115620/1?utm_source=geeksforgeeks&utm_medium=article_practice_tab&utm_campaign=article_practice_tab
+
+Solution :
+class Solution
+{
+    static boolean isIsogram(String data){
+        
+        int frequency[] = new int[26];
+        Arrays.fill(frequency,0);
+        int fre = 0;
+        for(int i = 0; i < data.length(); i++)
+        {
+            fre = data.charAt(i) - 'a';
+            frequency[fre] += 1;
+            if(frequency[fre] > 1)
+                return false;
+        }
+        return true;
+    }
+}
