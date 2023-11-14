@@ -1,0 +1,23 @@
+Problem Statement :
+Given a string S. The task is to find the first repeated character in it. We need to find the character that occurs more than once and whose index of second occurrence is smallest. 
+S contains only lowercase letters.
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/find-first-repeated-character4108/1?utm_source=geeksforgeeks&utm_medium=article_practice_tab&utm_campaign=article_practice_tab
+
+Solution :
+class Solution 
+{ 
+    String firstRepChar(String s) 
+    { 
+        ArrayList<Character> occured = new ArrayList<>();
+        
+        for(int i = 0; i < s.length(); i++)
+        {
+            if(occured.contains(s.charAt(i)))
+                return String.valueOf(s.charAt(i));
+            occured.add(s.charAt(i));
+        }
+        return "-1";
+    }
+} 
