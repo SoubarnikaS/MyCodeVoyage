@@ -1,0 +1,30 @@
+Problem Statement :
+Given a String S, reverse the string without reversing its individual words. Words are separated by dots.
+Input:
+S = i.like.this.program.very.much
+Output: much.very.program.this.like.i
+Explanation: After reversing the whole
+string(not individual words), the input
+string becomes
+much.very.program.this.like.i
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/1?page=1&category=Strings&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Solution 
+{
+    //Function to reverse words in a given string.
+    String reverseWords(String S)
+    {
+        String arr[] = S.split("\\.");
+        StringBuilder result = new StringBuilder();
+        
+        for(int i = arr.length - 1; i >= 0; i--)
+            result.append(arr[i]).append(".");
+        
+        String str = (result.toString());
+        
+        return str.substring(0,result.length() - 1);
+    }
+}
