@@ -1,0 +1,24 @@
+Problem Statement :
+Given a string S, the task is to create a string with the first letter of every word in the string.
+Input: 
+S = "geeks for geeks"
+Output: gfg
+
+Problem Statement :
+https://www.geeksforgeeks.org/problems/print-first-letter-of-every-word-in-the-string3632/1?page=1&category=Strings&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Solution 
+{
+    String firstAlphabet(String S) 
+    {
+        StringBuilder result = new StringBuilder();
+        result.append(S.charAt(0));
+        
+        for(int i = 0; i < S.length(); i++)
+            if(S.charAt(i) == ' ')
+                result.append(S.charAt(i + 1));
+        
+        return (result.toString());
+    }
+};
