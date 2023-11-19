@@ -1,0 +1,27 @@
+Problem Statement :
+Given a string S contains 0's, 1's, and 2's, the task is to find the number of goals on the penalty.
+ '1' stands for "goal".
+ '0' stands for "no goal".
+ '2' stands for a foul which gives a penalty.
+
+Input: S = "1012012112110"
+Output: 2
+Explanation: There are 3 penalties,of which he scores only 2.
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/the-penalty-shootout3810/1?page=1&category=Strings&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Solution
+{
+    public int penaltyScore(String S)
+    {
+        int penalty = 0;
+        
+        for(int i = 0; i < S.length() - 1; i++)
+            if(S.charAt(i) == '2' && S.charAt(i + 1) == '1')
+                penalty++;
+                
+        return penalty;
+    }
+}
