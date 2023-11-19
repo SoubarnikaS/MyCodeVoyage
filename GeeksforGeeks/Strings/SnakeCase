@@ -1,0 +1,33 @@
+Problem Statement :
+Given a Sentence S of length N containing only english alphabet characters, your task is to write a program that converts the given sentence to Snake Case sentence. Snake case is the practice of writing compound words or phrases in which the elements are separated with one underscore character (_) and no spaces, and the first letter of each word written in lowercase. For ease keep all the characters in lowercase.
+Note: The given sentence will not start with a Whitespace.
+Input: 
+N = 14
+S = "Geeks ForGeeks"
+Output: "geeks_forgeeks"
+Explanation: All upper case characters are
+converted to lower case and the whitespace
+characters are replaced with underscore '_'.
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/snake-case0219/1?page=1&category=Strings&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Solution {
+    static String snakeCase(String str , int n) {
+        
+       StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < n; i++) 
+        {
+            if (Character.isWhitespace(str.charAt(i))) 
+                result.append("_");
+            else if (Character.isUpperCase(str.charAt(i)))
+                result.append(Character.toLowerCase(str.charAt(i)));
+            else
+                result.append(str.charAt(i));
+        }
+
+        return result.toString();
+    }
+};
