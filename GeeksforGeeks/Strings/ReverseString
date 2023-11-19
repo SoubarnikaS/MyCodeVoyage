@@ -1,0 +1,19 @@
+Problem Statement :
+You are given a string s. You need to reverse the string s.
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/reverse-a-string/1?page=1&category=Strings&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Reverse
+{
+    public static String reverseWord(String str)
+    {
+        StringBuilder reversed = new StringBuilder();
+        
+        for(int i = str.length() - 1; i >= 0; i--)
+            reversed.append(str.charAt(i));
+        
+        return (reversed.toString());
+    }
+}
