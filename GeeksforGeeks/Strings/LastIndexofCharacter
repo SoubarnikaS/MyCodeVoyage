@@ -1,0 +1,18 @@
+Problem Statement :
+Given a string S  and a character X, the task is to find the last index (0 based indexing) of X in string S. If no index found then the answer will be -1.
+Input: S = "Geeks", P = 'e'
+Output: 2
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/last-index-of-a-character-in-the-string4516/1?page=1&category=Strings&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Solution{
+    int LastIndex(String s, char p)
+    {
+        for(int i = s.length() - 1; i >= 0; i--)
+            if(s.charAt(i) == p)
+                return (i);
+        return -1;
+    }
+}
