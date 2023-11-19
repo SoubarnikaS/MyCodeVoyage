@@ -1,0 +1,20 @@
+Problem Statement :
+Given a string S consisting of upper/lower-case alphabets and empty space characters ‘ ‘. 
+The string may contain spaces at the end. You will have return the length of last word which consists of alphabets only.
+Input:
+S = "Geeks for Geeks"
+Output: 5
+Explanation: The last word is "Geeks" of length 5.
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/length-of-last-word5721/1?page=1&category=Strings&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Solution 
+{ 
+    int findLength(String s) 
+    { 
+        String arr[] = s.split("\\s");
+        return (arr[arr.length - 1].length());
+    }
+}
