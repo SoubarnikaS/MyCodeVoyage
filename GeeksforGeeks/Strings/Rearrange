@@ -1,0 +1,35 @@
+Problem Statement :
+Given a string containing uppercase alphabets and integer digits (from 0 to 9), the task is to print the alphabets in the lexicographical order followed by the sum of digits.
+Input: S = "AC2BEW3"
+Output: "ABCEW5"
+Explanation: 2 + 3 = 5 and we print all alphabets in the lexicographical order. 
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/rearrange-a-string4100/1?page=1&category=Strings&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Solution
+{
+    public String arrangeString(String s)
+    {
+        if(s.length() == 1)
+            return s;
+        
+        StringBuilder alphabets = new StringBuilder();
+        int digitSum = 0;
+
+        for (char c : s.toCharArray()) {
+            if (Character.isAlphabetic(c)) {
+                alphabets.append(c);
+            } else if (Character.isDigit(c)) {
+                digitSum += Character.getNumericValue(c);
+            }
+        }
+
+        char[] alphabetArray = alphabets.toString().toCharArray();
+        Arrays.sort(alphabetArray);
+
+        return new String(alphabetArray) + (digitSum);
+    }
+}
+
