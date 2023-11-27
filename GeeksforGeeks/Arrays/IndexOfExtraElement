@@ -1,0 +1,35 @@
+Problem Statement :
+Given two sorted arrays of distinct elements. There is only 1 difference between the arrays. First array has one element extra added in between. Find the index of the extra element.
+Input:
+N = 7
+A[] = {2,4,6,8,9,10,12}
+B[] = {2,4,6,8,10,12}
+Output: 4
+Explanation: In the second array, 9 is
+missing and it's index in the first array
+is 4.
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/index-of-an-extra-element/1?page=1&category=Arrays&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Solution{
+  public:
+    int findExtra(int a[], int b[], int n) {
+        
+        int left = 0, right = n - 1;
+        
+        while(left <= right)
+        {
+            int mid = left + (right - left) / 2;
+            
+            if(a[mid] == b[mid])
+                left = mid + 1;
+            
+            else
+                right = mid - 1;
+        }
+       
+       return left; 
+    }
+};
