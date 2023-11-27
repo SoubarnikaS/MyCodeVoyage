@@ -1,0 +1,34 @@
+Problem Statement :
+Given a sorted array Arr[](0-index based) consisting of N distinct integers and an integer k, the task is to find the index of k, if its present in the array Arr[]. Otherwise, find the index where k must be inserted to keep the array sorted.
+Input:
+N = 4
+Arr = {1, 3, 5, 6}
+k = 5
+Output: 2
+Explaination: Since 5 is found at index 2 
+as Arr[2] = 5, the output is 2.
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/search-insert-position-of-k-in-a-sorted-array/1?page=1&category=Arrays&difficulty=Basic,Easy&sortBy=submissions
+
+Solution :
+class Solution{
+  public:
+    int findExtra(int a[], int b[], int n) {
+        
+        int left = 0, right = n - 1;
+        
+        while(left <= right)
+        {
+            int mid = left + (right - left) / 2;
+            
+            if(a[mid] == b[mid])
+                left = mid + 1;
+            
+            else
+                right = mid - 1;
+        }
+       
+       return left; 
+    }
+};
