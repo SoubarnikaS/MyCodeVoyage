@@ -1,0 +1,18 @@
+Problem Statement :
+Given an integer x, find the square root of x. If x is not a perfect square, then return floor(√x).
+Input:
+x = 5
+Output: 2
+Explanation: Since, 5 is not a perfect square, floor of square_root of 5 is 2.
+
+Problem Statement Link :
+https://www.geeksforgeeks.org/problems/square-root/1?page=7&sortBy=submissions
+
+Solution :
+class Solution{
+  public:
+    long long int floorSqrt(long long int x) 
+    {
+         return sqrt(x);
+    }
+};
