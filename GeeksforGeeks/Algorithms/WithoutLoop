@@ -1,0 +1,22 @@
+Problem Statement :
+Print numbers from 1 to N without the help of loops.
+Input:
+N = 10
+Output: 1 2 3 4 5 6 7 8 9 10
+
+Link:
+https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1?page=10&sortBy=submissions
+
+Solution :
+class Solution{
+    public:
+    //Complete this function
+    void printNos(int N)
+    {
+        if(N == 0)
+            return;
+        printNos(N - 1);
+        
+        cout<<N<<" ";
+    }
+};
